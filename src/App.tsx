@@ -2,7 +2,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Layout from "./components/Layout";
 import Home from "./pages/Home";
 import About from "./pages/About";
@@ -20,12 +20,16 @@ import VideoCarousel from "./components/ui/VideoCarousel";
 
 // Institute Section Pages
 import Mission from "./pages/institute/Mission";
-import Ethics from "./pages/institute/Ethics";
 import ChairmanMessage from "./pages/institute/ChairmanMessage";
-import EC20232025 from "./pages/institute/EC20232025";
-import EC20252027 from "./pages/institute/EC20252027";
 import FormerChairmen from "./pages/institute/FormerChairmen";
 import FormerPresidents from "./pages/institute/FormerPresidents";
+import IIMMHouse from "./pages/institute/IIMMHouse";
+import GuestHouse from "./pages/institute/GuestHouse";
+import Evolution from "./pages/institute/Evolution";
+import ValuesPage from "./pages/institute/Values";
+import Administration from "./pages/institute/Administration";
+import BoardOfStudies from "./pages/institute/BoardOfStudies";
+import Network from "./pages/institute/Network";
 
 // Education Section Pages
 import Courses from "./pages/education/Courses";
@@ -34,14 +38,24 @@ import Fees from "./pages/education/Fees";
 import Faculty from "./pages/education/Faculty";
 import Forms from "./pages/education/Forms";
 import StudentZone from "./pages/education/StudentZone";
+import ExamSchedule from "./pages/education/ExamSchedule";
+import Results from "./pages/education/Results";
+import MandatoryDisclosures from "./pages/education/MandatoryDisclosures";
 
 import { Youtube } from "lucide-react";
 
 // Import membership components
 import WhyJoinIIMM from "./pages/membership/WhyJoinIIMM";
 import MembershipTypes from "./pages/membership/MembershipTypes";
-import ApplicationForms from "./pages/membership/ApplicationForms";
-import IIMMBranches from "./pages/membership/IIMMBranches";
+import ApplicationForms from "./pages/membership/forms";
+import OrdinaryApplicationPage from "./pages/membership/forms/OrdinaryApplicationPage";
+import InstitutionalApplicationPage from "./pages/membership/forms/InstitutionalApplicationPage";
+import IIMMBranches from "./pages/membership/branches";
+import NorthBranch from "./pages/membership/branches/NorthBranch";
+import SouthBranch from "./pages/membership/branches/SouthBranch";
+import EastBranch from "./pages/membership/branches/EastBranch";
+import WestBranch from "./pages/membership/branches/WestBranch";
+import CentralBranch from "./pages/membership/branches/CentralBranch";
 
 // Payment Pages
 import DelhiBranch from "./pages/payment/DelhiBranch";
@@ -69,12 +83,18 @@ const App = () => (
             {/* Institute Section Routes */}
             <Route path="/institute/about" element={<About />} />
             <Route path="/institute/mission" element={<Mission />} />
-            <Route path="/institute/ethics" element={<Ethics />} />
             <Route path="/institute/chairman-message" element={<ChairmanMessage />} />
-            <Route path="/institute/ec-2023-2025" element={<EC20232025 />} />
-            <Route path="/institute/ec-2025-2027" element={<EC20252027 />} />
             <Route path="/institute/former-chairmen" element={<FormerChairmen />} />
             <Route path="/institute/former-presidents" element={<FormerPresidents />} />
+            <Route path="/institute/iimm-house" element={<IIMMHouse />} />
+            <Route path="/institute/guest-house" element={<GuestHouse />} />
+            <Route path="/institute/evolution" element={<Evolution />} />
+            <Route path="/institute/values" element={<ValuesPage />} />
+            <Route path="/institute/administration" element={<Administration />} />
+            <Route path="/institute/board-of-studies" element={<BoardOfStudies />} />
+            <Route path="/institute/network" element={<Network />} />
+         
+            
             
             {/* Education Section Routes */}
             <Route path="/education/courses" element={<Courses />} />
@@ -82,8 +102,24 @@ const App = () => (
             <Route path="/education/fees" element={<Fees />} />
             <Route path="/education/faculty" element={<Faculty />} />
             <Route path="/education/forms" element={<Forms />} />
-            <Route path="/education/student-zone" element={<StudentZone />} />
-            <Route path="/education/student-zone/*" element={<StudentZone />} />
+            <Route path="/education/student-zone" element={<StudentZone />}>
+              <Route index element={null} />
+              <Route path="academic-calendar" element={<div>Academic Calendar Page</div>} />
+              <Route path="course-materials" element={<div>Course Materials Page</div>} />
+              <Route path="exam-schedule" element={<div>Exam Schedule Page</div>} />
+              <Route path="portal" element={<div>Student Portal Page</div>} />
+              <Route path="assignments" element={<div>Assignments Page</div>} />
+              <Route path="books" element={<div>Books & Resources Page</div>} />
+              <Route path="exam-timetable" element={<div>Exam Timetable Page</div>} />
+              <Route path="certification" element={<div>Certification Forms Page</div>} />
+              <Route path="question-papers" element={<div>Previous Question Papers Page</div>} />
+            </Route>
+            <Route path="/education/exam-schedule" element={<ExamSchedule />} />
+            <Route path="/education/exam-schedule/:type" element={<ExamSchedule />} />
+            <Route path="/education/results" element={<Results />} />
+            <Route path="/education/results/:type" element={<Results />} />
+            <Route path="/education/results/:type/:year" element={<Results />} />
+            <Route path="/education/mandatory-disclosures" element={<MandatoryDisclosures />} />
             
             {/* Other Routes */}
             <Route path="/about" element={<About />} />
@@ -99,8 +135,19 @@ const App = () => (
               <Route index element={null} />
               <Route path="why-join" element={<WhyJoinIIMM />} />
               <Route path="types" element={<MembershipTypes />} />
-              <Route path="forms" element={<ApplicationForms />} />
-              <Route path="branches" element={<IIMMBranches />} />
+              <Route path="forms" element={<ApplicationForms />}>
+                <Route index element={<Navigate to="ordinary" replace />} />
+                <Route path="ordinary" element={<OrdinaryApplicationPage />} />
+                <Route path="institutional" element={<InstitutionalApplicationPage />} />
+              </Route>
+              <Route path="branches" element={<IIMMBranches />}>
+                <Route index element={<Navigate to="north" replace />} />
+                <Route path="north" element={<NorthBranch />} />
+                <Route path="south" element={<SouthBranch />} />
+                <Route path="east" element={<EastBranch />} />
+                <Route path="west" element={<WestBranch />} />
+                <Route path="central" element={<CentralBranch />} />
+              </Route>
             </Route>
             <Route path="/training" element={<Training />} />
             {/* Alumni Section Routes */}
