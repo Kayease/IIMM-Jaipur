@@ -1,179 +1,166 @@
-import InstituteHero from "@/components/InstituteHero";
-import heroImage from "@/assets/Herosection/home.png";
-import { Download, FileText, Award, Clock, BookOpen } from "lucide-react";
+import { useState } from "react";
+import { Mail, Lock, User, Phone } from "lucide-react";
+import logo from "@/assets/iimm-logo.png"; // replace with your actual logo path
 
-const Prospectus = () => {
-  const prospectusItems = [
-    {
-      title: "Post Graduate Diploma in Materials Management (PGDMM)",
-      code: "PGDMM-2024",
-      lastUpdated: "January 2024",
-      size: "2.5 MB",
-      link: "#"
-    },
-    {
-      title: "Advanced Diploma in Materials Management (ADMM)",
-      code: "ADMM-2024",
-      lastUpdated: "January 2024",
-      size: "1.8 MB",
-      link: "#"
-    },
-    {
-      title: "Diploma in Materials Management (DMM)",
-      code: "DMM-2024",
-      lastUpdated: "January 2024",
-      size: "1.5 MB",
-      link: "#"
-    },
-    {
-      title: "Certificate Courses 2024",
-      code: "CERT-2024",
-      lastUpdated: "February 2024",
-      size: "1.2 MB",
-      link: "#"
+export default function AdmissionPortal() {
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    mobile: "",
+    password: "",
+    confirmPassword: "",
+    agree: false,
+  });
+
+  const handleChange = (e) => {
+    const { name, value, type, checked } = e.target;
+    setFormData({
+      ...formData,
+      [name]: type === "checkbox" ? checked : value,
+    });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!formData.agree) {
+      alert("You must accept the terms and conditions!");
+      return;
     }
-  ];
-
-  const importantDates = [
-    { event: "Start of Application Process", date: "1st April 2024" },
-    { event: "Last Date for Submission", date: "31st May 2024" },
-    { event: "Entrance Test", date: "15th June 2024" },
-    { event: "Interview (if applicable)", date: "20th - 25th June 2024" },
-    { event: "Commencement of Classes", date: "1st July 2024" }
-  ];
+    console.log("Form Data Submitted:", formData);
+  };
 
   return (
-    <div className="min-h-screen bg-white">
-      <InstituteHero
-        title="Prospectus"
-        subtitle="Academic Year 2024-25"
-        image={heroImage}
-      />
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#0f1442] via-[#16225a] to-[#1f2e72]">
+      <div className="bg-white w-full max-w-md rounded-xl shadow-2xl overflow-hidden">
+        {/* Header Section */}
+        <div className="p-8 pb-0 text-center">
+          <h2 className="text-2xl font-semibold text-gray-800 mb-4">
+            Admission Portal
+          </h2>
+          <img
+            src={logo}
+            alt="IIMM Logo"
+            className="mx-auto w-20 h-20 object-contain"
+          />
+          <p className="text-gray-500 mt-4 mb-6 text-sm">
+            Fill the sign up form
+          </p>
+        </div>
 
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">Download Prospectus</h2>
-              <div className="w-20 h-1 bg-primary mx-auto mb-6"></div>
-              <p className="text-gray-600 max-w-3xl mx-auto">
-                Download the detailed prospectus for our academic programs to learn about the curriculum, 
-                admission process, fee structure, and more.
-              </p>
+        {/* Form Section */}
+        <form onSubmit={handleSubmit} className="p-8 pt-0 space-y-4">
+          <div className="flex space-x-2">
+            <div className="relative w-1/2">
+              <User className="absolute left-3 top-3 text-gray-400 h-5 w-5" />
+              <input
+                type="text"
+                name="firstName"
+                placeholder="First Name"
+                value={formData.firstName}
+                onChange={handleChange}
+                className="pl-10 pr-3 py-2 w-full border border-gray-300 rounded-md focus:ring-2 focus:ring-indigo-400 focus:outline-none"
+                required
+              />
             </div>
-
-            <div className="bg-gray-50 rounded-lg border border-gray-200 overflow-hidden mb-12">
-              <div className="bg-primary text-white px-6 py-4">
-                <h3 className="text-lg font-semibold">Available Prospectus</h3>
-              </div>
-              <div className="divide-y divide-gray-200">
-                {prospectusItems.map((item, index) => (
-                  <div key={index} className="p-4 hover:bg-gray-50 transition-colors">
-                    <div className="flex flex-col md:flex-row md:items-center justify-between">
-                      <div className="flex items-start space-x-4">
-                        <div className="bg-primary/10 p-2 rounded-full">
-                          <FileText className="h-6 w-6 text-primary" />
-                        </div>
-                        <div>
-                          <h4 className="font-medium text-gray-900">{item.title}</h4>
-                          <div className="flex flex-wrap gap-x-4 gap-y-1 mt-1 text-sm text-gray-500">
-                            <span>Code: {item.code}</span>
-                            <span>Updated: {item.lastUpdated}</span>
-                            <span>{item.size}</span>
-                          </div>
-                        </div>
-                      </div>
-                      <a 
-                        href={item.link}
-                        className="mt-3 md:mt-0 inline-flex items-center justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-primary hover:bg-primary/90 transition-colors"
-                        download
-                      >
-                        <Download className="h-4 w-4 mr-2" />
-                        Download
-                      </a>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div className="grid md:grid-cols-2 gap-8 mb-12">
-              <div className="bg-white border border-gray-200 rounded-lg p-6">
-                <h3 className="text-xl font-semibold text-gray-900 mb-4">Important Dates</h3>
-                <div className="space-y-4">
-                  {importantDates.map((date, index) => (
-                    <div key={index} className="flex items-start">
-                      <div className="bg-primary/10 text-primary rounded-full p-1.5 mr-3">
-                        <Clock className="h-4 w-4" />
-                      </div>
-                      <div>
-                        <p className="font-medium text-gray-900">{date.event}</p>
-                        <p className="text-sm text-gray-600">{date.date}</p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              <div className="bg-white border border-gray-200 rounded-lg p-6">
-                <h3 className="text-xl font-semibold text-gray-900 mb-4">Admission Process</h3>
-                <ol className="space-y-4">
-                  <li className="flex items-start">
-                    <span className="bg-primary text-white text-sm font-medium rounded-full h-6 w-6 flex items-center justify-center flex-shrink-0 mr-3">1</span>
-                    <div>
-                      <p className="font-medium text-gray-900">Download and fill the application form</p>
-                      <p className="text-sm text-gray-600">Available in the prospectus</p>
-                    </div>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="bg-primary text-white text-sm font-medium rounded-full h-6 w-6 flex items-center justify-center flex-shrink-0 mr-3">2</span>
-                    <div>
-                      <p className="font-medium text-gray-900">Submit the form with required documents</p>
-                      <p className="text-sm text-gray-600">In person or by post</p>
-                    </div>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="bg-primary text-white text-sm font-medium rounded-full h-6 w-6 flex items-center justify-center flex-shrink-0 mr-3">3</span>
-                    <div>
-                      <p className="font-medium text-gray-900">Appear for entrance test/interview</p>
-                      <p className="text-sm text-gray-600">If applicable</p>
-                    </div>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="bg-primary text-white text-sm font-medium rounded-full h-6 w-6 flex items-center justify-center flex-shrink-0 mr-3">4</span>
-                    <div>
-                      <p className="font-medium text-gray-900">Complete admission formalities</p>
-                      <p className="text-sm text-gray-600">Fee payment and document verification</p>
-                    </div>
-                  </li>
-                </ol>
-              </div>
-            </div>
-
-            <div className="bg-blue-50 border-l-4 border-blue-400 p-6 rounded-r">
-              <div className="flex">
-                <div className="flex-shrink-0">
-                  <svg className="h-5 w-5 text-blue-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                    <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h2a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd" />
-                  </svg>
-                </div>
-                <div className="ml-3">
-                  <h3 className="text-sm font-medium text-blue-800">Need Help?</h3>
-                  <div className="mt-2 text-sm text-blue-700">
-                    <p>
-                      For any queries regarding admissions or prospectus, please contact our admission cell at 
-                      <a href="mailto:admission@iimmdelhi.org" className="font-medium underline ml-1">admission@iimmdelhi.org</a> 
-                      or call us at <a href="tel:+911141354969" className="font-medium">+91-11-41354969</a>.
-                    </p>
-                  </div>
-                </div>
-              </div>
+            <div className="relative w-1/2">
+              <User className="absolute left-3 top-3 text-gray-400 h-5 w-5" />
+              <input
+                type="text"
+                name="lastName"
+                placeholder="Last Name"
+                value={formData.lastName}
+                onChange={handleChange}
+                className="pl-10 pr-3 py-2 w-full border border-gray-300 rounded-md focus:ring-2 focus:ring-indigo-400 focus:outline-none"
+                required
+              />
             </div>
           </div>
-        </div>
-      </section>
+
+          <div className="relative">
+            <Mail className="absolute left-3 top-3 text-gray-400 h-5 w-5" />
+            <input
+              type="email"
+              name="email"
+              placeholder="Email"
+              value={formData.email}
+              onChange={handleChange}
+              className="pl-10 pr-3 py-2 w-full border border-gray-300 rounded-md focus:ring-2 focus:ring-indigo-400 focus:outline-none"
+              required
+            />
+          </div>
+
+          <div className="relative">
+            <Phone className="absolute left-3 top-3 text-gray-400 h-5 w-5" />
+            <input
+              type="text"
+              name="mobile"
+              placeholder="Mobile"
+              value={formData.mobile}
+              onChange={handleChange}
+              className="pl-10 pr-3 py-2 w-full border border-gray-300 rounded-md focus:ring-2 focus:ring-indigo-400 focus:outline-none"
+              required
+            />
+          </div>
+
+          <div className="relative">
+            <Lock className="absolute left-3 top-3 text-gray-400 h-5 w-5" />
+            <input
+              type="password"
+              name="password"
+              placeholder="Password"
+              value={formData.password}
+              onChange={handleChange}
+              className="pl-10 pr-3 py-2 w-full border border-gray-300 rounded-md focus:ring-2 focus:ring-indigo-400 focus:outline-none"
+              required
+            />
+          </div>
+
+          <div className="relative">
+            <Lock className="absolute left-3 top-3 text-gray-400 h-5 w-5" />
+            <input
+              type="password"
+              name="confirmPassword"
+              placeholder="Password (confirm)"
+              value={formData.confirmPassword}
+              onChange={handleChange}
+              className="pl-10 pr-3 py-2 w-full border border-gray-300 rounded-md focus:ring-2 focus:ring-indigo-400 focus:outline-none"
+              required
+            />
+          </div>
+
+          {/* Checkbox */}
+          <div className="flex items-center space-x-2 mt-2">
+            <input
+              type="checkbox"
+              name="agree"
+              checked={formData.agree}
+              onChange={handleChange}
+              className="h-4 w-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500"
+            />
+            <label className="text-sm text-gray-600">
+              I agree with the{" "}
+              <a href="#" className="text-indigo-600 hover:underline">
+                Privacy Policy
+              </a>
+            </label>
+          </div>
+
+          {!formData.agree && (
+            <p className="text-red-500 text-sm">
+              You must accept terms and conditions
+            </p>
+          )}
+
+          {/* Button */}
+          <button
+            type="submit"
+            className="w-full mt-4 bg-indigo-500 text-white py-2 rounded-md font-medium hover:bg-indigo-600 transition-all"
+          >
+            CREATE ACCOUNT
+          </button>
+        </form>
+      </div>
     </div>
   );
-};
-
-export default Prospectus;
+}

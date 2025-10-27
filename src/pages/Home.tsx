@@ -4,8 +4,10 @@ import { Card, CardContent } from "@/components/ui/card";
 import { BookOpen, Users, Award, Building2, Calendar, FileText, GraduationCap, Network, User, Star, PlayCircle, MapPin } from "lucide-react";
 import YoutubeSection from "@/components/YoutubeSection";
 import HeroCarousel from "@/components/HeroCarousel";
+import HomeCarousel from "@/components/HomeCarousel";
 import Map from "@/components/Map";
 import heroMain from "@/assets/hero-main.jpg";
+import Image from "@/assets/Herosection/image.png"
 
 const Home = () => {
   const quickLinks = [
@@ -13,7 +15,7 @@ const Home = () => {
     { name: "Prospectus", icon: FileText, link: "/education/prospectus", color: "bg-blue-600" },
     { name: "Application Form", icon: GraduationCap, link: "/education/forms", color: "bg-primary" },
     { name: "Membership", icon: Users, link: "/membership/why-join", color: "bg-purple-600" },
-    { name: "Office Bearers", icon: Award, link: "/institute/ec-2023-2025", color: "bg-yellow-600" },
+    { name: "Office Bearers", icon: Award, link: "/institute/administration#office-bearers", color: "bg-yellow-600" },
     { name: "IIMM Network", icon: Network, link: "/membership/branches", color: "bg-orange-600" },
   ];
 
@@ -22,6 +24,8 @@ const Home = () => {
       <div className="bg-primary-dark text-primary-foreground text-center py-3 px-4">
         <p className="text-sm md:text-base font-medium">SECOND CHANCE - JULY-2025 SESSION - Apply Now!</p>
       </div>
+      
+      
 
       <section className="bg-muted/30">
         <div className="w-full">
@@ -61,6 +65,7 @@ const Home = () => {
           </div>
         </div>
       </section>
+      <HomeCarousel />
 
       <section className="py-16 bg-white w-full">
         <div className="w-full max-w-full">
@@ -77,13 +82,15 @@ const Home = () => {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-0">
             {/* Left Side - Images */}
             <div className="lg:col-span-2">
-              <div className="grid grid-cols-2 gap-0 h-full">
-                <div className="col-span-2 h-64 md:h-80 rounded-xl overflow-hidden shadow-lg">
-                  <img 
-                    src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
-                    alt="IIMM Delhi Conference"
-                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-                  />
+              <div className="grid grid-cols-2 gap-4 h-full p-2">
+                <div className="col-span-2 h-auto rounded-xl overflow-hidden shadow-lg">
+                  <div className="relative pt-[40%] max-h-60">
+                    <img 
+                      src={Image}
+                      alt="IIMM Jaipur Conference"
+                      className="absolute top-0 left-0 right-0 bottom-0 m-auto max-h-[90%] max-w-[90%] object-contain bg-white p-1 hover:scale-105 transition-transform duration-500"
+                    />
+                  </div>
                 </div>
                 <div className="h-40 md:h-48 rounded-xl overflow-hidden shadow-lg">
                   <img 
@@ -92,14 +99,11 @@ const Home = () => {
                     className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                   />
                 </div>
-                <div className="h-40 md:h-48 rounded-xl overflow-hidden shadow-lg relative group">
-                  <div className="absolute inset-0 bg-primary/80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <span className="text-white font-medium">View More</span>
-                  </div>
+                <div className="h-40 md:h-48 rounded-xl overflow-hidden shadow-lg">
                   <img 
                     src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
                     alt="IIMM Training"
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                   />
                 </div>
               </div>
@@ -147,9 +151,11 @@ const Home = () => {
               </div>
               
               <div className="mt-6 pt-4 border-t border-gray-100">
-                <Button className="w-full bg-primary hover:bg-primary/90">
-                  Explore Our Programs
-                </Button>
+                <Link to="/education/courses">
+                  <Button className="w-full bg-primary hover:bg-primary/90">
+                    Explore Our Programs
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>
@@ -200,146 +206,7 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="py-16 bg-primary-dark w-full">
-        <div className="w-full">
-          <div className="text-center mb-12">
-            <h2 className="font-heading text-3xl md:text-4xl font-bold text-white mb-4">Upcoming Events</h2>
-            <div className="w-20 h-1 bg-white mx-auto mb-6"></div>
-          </div>
-          
-          <div className="flex overflow-x-auto pb-6 no-scrollbar w-full">
-            <div className="flex space-x-6">
-              {/* Event 1 */}
-              <div className="w-80 flex-shrink-0 first:ml-4 last:mr-4">
-                <Card className="h-full overflow-hidden hover:shadow-lg transition-all duration-300">
-                  <div className="relative h-48 bg-gradient-to-r from-blue-600 to-blue-400 flex items-center justify-center">
-                    <div className="absolute top-4 left-4 bg-white text-blue-600 px-3 py-1 rounded-full text-sm font-semibold">
-                      Workshop
-                    </div>
-                    <Calendar className="h-16 w-16 text-white opacity-20" />
-                    <div className="absolute bottom-4 left-0 right-0 text-center">
-                      <div className="inline-block bg-white/90 text-blue-600 px-4 py-1 rounded-full text-sm font-semibold">
-                        Oct 15, 2023
-                      </div>
-                    </div>
-                  </div>
-                  <CardContent className="p-6">
-                    <h3 className="font-heading text-xl font-semibold mb-2">Supply Chain Management Workshop</h3>
-                    <p className="text-muted-foreground mb-4">Learn the latest trends and best practices in supply chain management from industry experts.</p>
-                    <Button variant="outline" className="w-full border-primary text-primary hover:bg-primary hover:text-white">
-                      Register Now
-                    </Button>
-                  </CardContent>
-                </Card>
-              </div>
-
-              {/* Event 2 */}
-              <div className="w-80 flex-shrink-0 first:ml-4 last:mr-4">
-                <Card className="h-full overflow-hidden hover:shadow-lg transition-all duration-300">
-                  <div className="relative h-48 bg-gradient-to-r from-green-600 to-green-400 flex items-center justify-center">
-                    <div className="absolute top-4 left-4 bg-white text-green-600 px-3 py-1 rounded-full text-sm font-semibold">
-                      Conference
-                    </div>
-                    <Calendar className="h-16 w-16 text-white opacity-20" />
-                    <div className="absolute bottom-4 left-0 right-0 text-center">
-                      <div className="inline-block bg-white/90 text-green-600 px-4 py-1 rounded-full text-sm font-semibold">
-                        Nov 2-4, 2023
-                      </div>
-                    </div>
-                  </div>
-                  <CardContent className="p-6">
-                    <h3 className="font-heading text-xl font-semibold mb-2">Annual Materials Management Summit</h3>
-                    <p className="text-muted-foreground mb-4">Join us for the most anticipated event of the year in materials management.</p>
-                    <Button variant="outline" className="w-full border-primary text-primary hover:bg-primary hover:text-white">
-                      Learn More
-                    </Button>
-                  </CardContent>
-                </Card>
-              </div>
-
-              {/* Event 3 */}
-              <div className="w-80 flex-shrink-0 first:ml-4 last:mr-4">
-                <Card className="h-full overflow-hidden hover:shadow-lg transition-all duration-300">
-                  <div className="relative h-48 bg-gradient-to-r from-purple-600 to-purple-400 flex items-center justify-center">
-                    <div className="absolute top-4 left-4 bg-white text-purple-600 px-3 py-1 rounded-full text-sm font-semibold">
-                      Webinar
-                    </div>
-                    <Calendar className="h-16 w-16 text-white opacity-20" />
-                    <div className="absolute bottom-4 left-0 right-0 text-center">
-                      <div className="inline-block bg-white/90 text-purple-600 px-4 py-1 rounded-full text-sm font-semibold">
-                        Nov 20, 2023
-                      </div>
-                    </div>
-                  </div>
-                  <CardContent className="p-6">
-                    <h3 className="font-heading text-xl font-semibold mb-2">Digital Transformation in Logistics</h3>
-                    <p className="text-muted-foreground mb-4">Discover how digital technologies are revolutionizing logistics and supply chain operations.</p>
-                    <Button variant="outline" className="w-full border-primary text-primary hover:bg-primary hover:text-white">
-                      Join Webinar
-                    </Button>
-                  </CardContent>
-                </Card>
-              </div>
-
-              {/* Event 4 */}
-              <div className="w-80 flex-shrink-0 first:ml-4 last:mr-4">
-                <Card className="h-full overflow-hidden hover:shadow-lg transition-all duration-300">
-                  <div className="relative h-48 bg-gradient-to-r from-amber-600 to-amber-400 flex items-center justify-center">
-                    <div className="absolute top-4 left-4 bg-white text-amber-600 px-3 py-1 rounded-full text-sm font-semibold">
-                      Seminar
-                    </div>
-                    <Calendar className="h-16 w-16 text-white opacity-20" />
-                    <div className="absolute bottom-4 left-0 right-0 text-center">
-                      <div className="inline-block bg-white/90 text-amber-600 px-4 py-1 rounded-full text-sm font-semibold">
-                        Dec 5, 2023
-                      </div>
-                    </div>
-                  </div>
-                  <CardContent className="p-6">
-                    <h3 className="font-heading text-xl font-semibold mb-2">Sustainable Supply Chain Practices</h3>
-                    <p className="text-muted-foreground mb-4">Explore innovative approaches to building sustainable and resilient supply chains.</p>
-                    <Button variant="outline" className="w-full border-primary text-primary hover:bg-primary hover:text-white">
-                      Register Now
-                    </Button>
-                  </CardContent>
-                </Card>
-              </div>
-
-              {/* Event 5 */}
-              <div className="w-80 flex-shrink-0 first:ml-4 last:mr-4">
-                <Card className="h-full overflow-hidden hover:shadow-lg transition-all duration-300">
-                  <div className="relative h-48 bg-gradient-to-r from-rose-600 to-rose-400 flex items-center justify-center">
-                    <div className="absolute top-4 left-4 bg-white text-rose-600 px-3 py-1 rounded-full text-sm font-semibold">
-                      Training
-                    </div>
-                    <Calendar className="h-16 w-16 text-white opacity-20" />
-                    <div className="absolute bottom-4 left-0 right-0 text-center">
-                      <div className="inline-block bg-white/90 text-rose-600 px-4 py-1 rounded-full text-sm font-semibold">
-                        Jan 12-14, 2024
-                      </div>
-                    </div>
-                  </div>
-                  <CardContent className="p-6">
-                    <h3 className="font-heading text-xl font-semibold mb-2">Advanced Procurement Strategies</h3>
-                    <p className="text-muted-foreground mb-4">Master advanced procurement techniques and negotiation skills for better results.</p>
-                    <Button variant="outline" className="w-full border-primary text-primary hover:bg-primary hover:text-white">
-                      Learn More
-                    </Button>
-                  </CardContent>
-                </Card>
-              </div>
-            </div>
-          </div>
-          
-          <div className="text-center mt-12">
-            <Link to="/events">
-              <Button variant="outline" className="px-8 py-6 text-lg border-primary text-primary hover:bg-primary hover:text-white">
-                View All Events
-              </Button>
-            </Link>
-          </div>
-        </div>
-      </section>
+ 
 
       <section className="py-16 bg-white">
         <div className="">
@@ -536,117 +403,186 @@ const Home = () => {
 
       {/* Enhanced Location Map Section */}
       <section className="relative py-20 bg-gradient-to-b from-gray-50 to-white overflow-hidden">
-        {/* Decorative elements */}
-        <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-primary/5 to-transparent"></div>
-        <div className="absolute -bottom-20 -right-20 w-64 h-64 bg-blue-100 rounded-full mix-blend-multiply filter blur-3xl opacity-20"></div>
-        <div className="absolute -top-20 -left-20 w-96 h-96 bg-indigo-100 rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>
-        
-        <div className="relative container mx-auto px-4">
-          <div className="text-center mb-16 max-w-4xl mx-auto">
-            <span className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-blue-50 mb-6 shadow-lg transform transition-transform duration-500 hover:scale-110">
-              <MapPin className="w-8 h-8 text-blue-600" />
-            </span>
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600">
-              Find Our Location
-            </h2>
-            <p className="text-lg md:text-xl text-gray-600 leading-relaxed">
-              Visit our headquarters or explore the nearest IIMM branch. We're here to assist you with all your materials management needs.
+  {/* Decorative Backgrounds */}
+  <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-primary/5 to-transparent"></div>
+  <div className="absolute -bottom-20 -right-20 w-64 h-64 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20"></div>
+  <div className="absolute -top-20 -left-20 w-96 h-96 bg-indigo-100 rounded-full mix-blend-multiply filter blur-3xl opacity-10"></div>
+
+  <div className="relative container mx-auto px-4">
+    {/* Section Header */}
+    <div className="text-center mb-16 max-w-4xl mx-auto">
+      <span className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-blue-50 mb-6 shadow-lg">
+        <MapPin className="w-8 h-8 text-blue-600" />
+      </span>
+      <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600">
+        Find Our Location
+      </h2>
+      <p className="text-lg md:text-xl text-gray-600 leading-relaxed">
+        Visit our Jaipur branch and experience professional excellence in
+        materials management education.
+      </p>
+    </div>
+
+    {/* Grid Layout */}
+    <div className="grid lg:grid-cols-12 gap-10 items-center">
+      {/* Map Section */}
+      <div className="lg:col-span-8 h-[450px] md:h-[550px] relative">
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl shadow-2xl"></div>
+
+        <div className="absolute inset-0 bg-white rounded-xl shadow-xl overflow-hidden">
+          {/* Embedded Google Map */}
+          <iframe
+            title="IIMM Jaipur Location"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3562.0127648249917!2d75.78265247513954!3d26.78984436538644!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396db5fcf7289f8f%3A0xd5e61a6e0fdbde8!2sIndian%20Institute%20of%20Materials%20Management%20(IIMM)%20Jaipur%20Branch!5e0!3m2!1sen!2sin!4v1730026012359!5m2!1sen!2sin"
+            width="100%"
+            height="100%"
+            style={{ border: 0 }}
+            allowFullScreen=""
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            className="rounded-xl"
+          ></iframe>
+        </div>
+
+        <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-yellow-400 rounded-full flex items-center justify-center text-4xl shadow-lg">
+          <MapPin className="w-10 h-10 text-gray-900" />
+        </div>
+      </div>
+
+      {/* Contact Info Card */}
+      <div className="lg:col-span-4">
+        <div className="bg-white rounded-xl shadow-2xl p-8 border border-gray-100 hover:-translate-y-2 transition-all duration-500">
+          <div className="text-center mb-8">
+            <div className="w-20 h-20 bg-blue-50 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-inner">
+              <Building2 className="w-10 h-10 text-blue-600" />
+            </div>
+            <h3 className="text-2xl font-bold text-gray-900 mb-2">
+              IIMM Jaipur Branch
+            </h3>
+            <p className="text-blue-600 font-medium">
+              Jaipur, Rajasthan, India
             </p>
           </div>
-          
-          <div className="grid lg:grid-cols-12 gap-10 items-center">
-            {/* Map Container */}
-            <div className="lg:col-span-8 h-[450px] md:h-[550px] relative group">
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl shadow-2xl transform rotate-1 group-hover:rotate-0 transition-transform duration-500"></div>
-              <div className="absolute inset-0 bg-white rounded-xl shadow-xl overflow-hidden transform -rotate-1 group-hover:rotate-0 transition-all duration-500">
-                <Map height="100%" className="rounded-lg" />
+
+          <div className="space-y-6">
+            {/* Address */}
+            <div className="flex items-start">
+              <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-blue-50 flex items-center justify-center text-blue-600 mr-4">
+                <MapPin className="w-5 h-5" />
               </div>
-              <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-yellow-400 rounded-full flex items-center justify-center text-4xl animate-bounce shadow-lg">
-                <MapPin className="w-10 h-10 text-gray-900" />
+              <div>
+                <h4 className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-1">
+                  Address
+                </h4>
+                <p className="text-gray-700 leading-relaxed">
+                  48, Mohan Nagar,<br />
+                  Gopalpura Bypass,<br />
+                  Jaipur – 302001,<br />
+                  Rajasthan, India
+                </p>
               </div>
             </div>
-            
-            {/* Contact Card */}
-            <div className="lg:col-span-4">
-              <div className="bg-white rounded-xl shadow-2xl p-8 border border-gray-100 transform transition-all duration-500 hover:-translate-y-2">
-                <div className="text-center mb-8">
-                  <div className="w-20 h-20 bg-blue-50 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-inner">
-                    <Building2 className="w-10 h-10 text-blue-600" />
-                  </div>
-                  <h3 className="text-2xl font-bold text-gray-900 mb-2">IIMM Headquarters</h3>
-                  <p className="text-blue-600 font-medium">New Delhi, India</p>
-                </div>
-                
-                <div className="space-y-6">
-                  <div className="flex items-start group">
-                    <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-blue-50 flex items-center justify-center text-blue-600 mr-4 transition-colors duration-300 group-hover:bg-blue-100">
-                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                      </svg>
-                    </div>
-                    <div>
-                      <h4 className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-1">Address</h4>
-                      <p className="text-gray-700">123 Example Street,<br />New Delhi, Delhi 110001,<br />India</p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-center group">
-                    <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-blue-50 flex items-center justify-center text-blue-600 mr-4 transition-colors duration-300 group-hover:bg-blue-100">
-                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
-                      </svg>
-                    </div>
-                    <div>
-                      <h4 className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-1">Phone</h4>
-                      <a href="tel:+911123456789" className="text-gray-700 hover:text-blue-600 transition-colors">+91 11 2345 6789</a>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-center group">
-                    <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-blue-50 flex items-center justify-center text-blue-600 mr-4 transition-colors duration-300 group-hover:bg-blue-100">
-                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
-                      </svg>
-                    </div>
-                    <div>
-                      <h4 className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-1">Email</h4>
-                      <a href="mailto:info@iimm.org.in" className="text-gray-700 hover:text-blue-600 transition-colors">info@iimm.org.in</a>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-center group">
-                    <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-blue-50 flex items-center justify-center text-blue-600 mr-4 transition-colors duration-300 group-hover:bg-blue-100">
-                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                      </svg>
-                    </div>
-                    <div>
-                      <h4 className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-1">Hours</h4>
-                      <p className="text-gray-700">Monday - Friday: 9:00 AM - 6:00 PM</p>
-                    </div>
-                  </div>
-                </div>
-                
-                <div className="mt-8 pt-6 border-t border-gray-100">
-                  <a 
-                    href="https://www.google.com/maps/place/New+Delhi,+Delhi" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="w-full flex items-center justify-center px-6 py-3.5 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-medium rounded-lg shadow-md hover:shadow-lg transform transition-all duration-300 hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
-                  >
-                    <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                    </svg>
-                    Get Directions
-                  </a>
-                </div>
+
+            {/* Phone */}
+            <div className="flex items-center">
+              <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-blue-50 flex items-center justify-center text-blue-600 mr-4">
+                <svg
+                  className="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                  ></path>
+                </svg>
+              </div>
+              <div>
+                <h4 className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-1">
+                  Phone
+                </h4>
+                <a
+                  href="tel:+919799299157"
+                  className="text-gray-700 hover:text-blue-600 transition-colors"
+                >
+                  09799299157
+                </a>
+              </div>
+            </div>
+
+            {/* Email */}
+            <div className="flex items-center">
+              <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-blue-50 flex items-center justify-center text-blue-600 mr-4">
+                <svg
+                  className="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                  ></path>
+                </svg>
+              </div>
+              <div>
+                <h4 className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-1">
+                  Email
+                </h4>
+                <a
+                  href="mailto:iimmjaipur@gmail.com"
+                  className="text-gray-700 hover:text-blue-600 transition-colors"
+                >
+                  iimmjaipur1@gmail.com
+                </a>
               </div>
             </div>
           </div>
+
+          {/* Directions Button */}
+          <div className="mt-8 pt-6 border-t border-gray-100">
+            <a
+              href="https://www.google.com/maps/place/Indian+Institute+of+Materials+Management+(IIMM)+Jaipur+Branch/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full flex items-center justify-center px-6 py-3.5 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-medium rounded-lg shadow-md hover:shadow-lg transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+            >
+              <svg
+                className="w-5 h-5 mr-2"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                ></path>
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                ></path>
+              </svg>
+              Get Directions
+            </a>
+          </div>
         </div>
-      </section>
+      </div>
+    </div>
+  </div>
+</section>
+
 
       <section className="py-16 bg-primary text-primary-foreground">
         <div className="container mx-auto px-4 text-center">

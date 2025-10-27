@@ -1,128 +1,162 @@
-import InstituteHero from "@/components/InstituteHero";
-import heroImage from "@/assets/Herosection/home.png";
+import React from "react";
+import { motion } from "framer-motion";
 
-export default function EvolutionPage() {
+const fadeInUp = {
+  hidden: { opacity: 0, y: 40 },
+  visible: (i = 1) => ({
+    opacity: 1,
+    y: 0,
+    transition: { delay: i * 0.15, duration: 0.6, ease: "easeOut" },
+  }),
+};
+
+const HistorySection = () => {
   return (
-    <div className="container mx-auto px-4 py-12">
-      <InstituteHero
-        title="Evolution of IIMM"
-        subtitle="A Journey of Excellence in Materials Management"
-        image={heroImage}
-      />
-      
-      <div className="max-w-5xl mx-auto mt-12">
-        <div className="bg-white rounded-lg shadow-md p-6 mb-8">
-          <h2 className="text-2xl font-bold mb-6 text-primary">Our Journey</h2>
-          
-          <div className="prose max-w-none">
-            <p className="text-gray-700 mb-6">
-              The Indian Institute of Materials Management (IIMM) was established with a vision to 
-              professionalize and promote the field of materials management in India. Over the years, 
-              IIMM has grown to become the apex body for materials management professionals in the country.
-            </p>
-            
-            <div className="border-l-4 border-primary pl-6 mb-8">
-              <h3 className="text-xl font-semibold text-primary mb-3">Our Foundation</h3>
-              <p className="text-gray-700">
-                IIMM was established on 19th September 1971, marking the beginning of a new era in 
-                professional materials management education and practice in India. The institute was 
-                founded with the mission to "Promote Professional Excellence in Materials Management 
-                towards National Prosperity through Sustainable Development."
+    <section className="bg-gradient-to-b from-white to-blue-50 text-gray-900 py-12 px-6 md:px-16 lg:px-24 overflow-hidden">
+      <div className="max-w-5xl mx-auto">
+        {/* ---------- HISTORY ---------- */}
+        <motion.h2
+          className="text-3xl font-bold mb-6 text-blue-800 border-b-4 border-blue-500 inline-block pb-1"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={fadeInUp}
+        >
+          History
+        </motion.h2>
+
+        {[
+          `Indian Institute of Materials Management (IIMM), with its headquarters at Navi Mumbai, is a Professional Body of Materials Management classified under Engineering & Technology Group under Apprenticeship Act, 1961 and is recognised by ISTE, MHRD.`,
+          `Through its wide network of 56 branches and 19 chapters having around 9500 members drawn from public and private sectors, IIMM is dedicated to the promotion of the profession of Materials Management through its multifarious activities including Educational Programs approved by AICTE (Post Graduate Diploma in Materials Management and Post Graduate Diploma in Logistics & Supply Chain Management), Seminars, National Conferences, Regional Conferences, Workshops, In-house training programs, Consultancy & Research Programs.`,
+          `To have an effective global interaction, the Institute is a charter member of International Federation of Purchasing and Supply Management (IFPSM), Helsinki, Finland which has its roots in over 44 member countries.`,
+          `In furtherance of its objectives, IIMM brings out a monthly journal, "Materials Management Review" comprising latest Articles and Research Papers in the field of Materials, Logistics, Purchase, Inventory, Supply Chain Management and latest Technological Innovations like Artificial Intelligence, Block Chain, Cloud Computing and Internet of Things.`,
+          `The Institute has its Centre for Research in Materials Management (CRIMM) at Kolkata, which is engaged in promotion of research activities in collaboration with industries for furthering the advancement of the profession of Materials and Supply Chain Management.`,
+          `The Institute is dedicated for the Societal & Environmental considerations through Sustainable Procurement, Green Purchasing and Life Cycle Consideration, which are part of our course curriculum.`,
+          `The aim & objective of the Institution is to update & upgrade the skills & knowledge of professionals so as to ensure inclusive and sustainable development.`,
+        ].map((text, index) => (
+          <motion.p
+            key={index}
+            className="mb-4 leading-relaxed text-gray-700"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            custom={index}
+            variants={fadeInUp}
+          >
+            {index === 0 ? (
+              <>
+                <strong className="text-blue-700">
+                  Indian Institute of Materials Management (IIMM)
+                </strong>
+                , with its headquarters at Navi Mumbai, is a Professional Body
+                of Materials Management classified under Engineering &
+                Technology Group under Apprenticeship Act, 1961 and is
+                recognised by ISTE, MHRD.
+              </>
+            ) : (
+              text
+            )}
+          </motion.p>
+        ))}
+
+        {/* ---------- EVOLUTION ---------- */}
+        <motion.h2
+          className="text-3xl font-bold mt-14 mb-6 text-blue-800 border-b-4 border-blue-500 inline-block pb-1"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={fadeInUp}
+        >
+          Evolution Of IIMM
+        </motion.h2>
+
+        <motion.div
+          className="rounded-xl overflow-hidden bg-white shadow-md border border-blue-100"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={fadeInUp}
+        >
+          {/* Row 1 */}
+          <div className="grid grid-cols-3 border-b border-gray-300 text-center">
+            {[
+              "National Association of Purchasing Executives Mumbai (1960–1970)",
+              "Materials Management Association of Hyderabad (1968–1975)",
+              "Purchasing Officers Association Calcutta (1960–1972)",
+            ].map((title, i) => (
+              <div
+                key={i}
+                className={`p-6 hover:bg-blue-50 transition ${
+                  i < 2 ? "border-r border-gray-300" : ""
+                }`}
+              >
+                <p className="font-medium">{title}</p>
+                <div className="text-2xl mt-2 text-blue-600 animate-bounce">
+                  ⬇️
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Row 2 */}
+          <div className="grid grid-cols-2 border-b border-gray-300 text-center">
+            {[
+              "National Associations for Materials Management (1970–1975)",
+              "Materials Management Association of India (1972–1975)",
+            ].map((title, i) => (
+              <div
+                key={i}
+                className={`p-6 hover:bg-blue-50 transition ${
+                  i === 0 ? "border-r border-gray-300" : ""
+                }`}
+              >
+                <p className="font-medium">{title}</p>
+                <div className="text-2xl mt-2 text-blue-600 animate-bounce">
+                  ⬇️
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Row 3 */}
+          <div className="p-8 border-b border-gray-300 text-center">
+            <div className="flex flex-col items-center">
+              <img
+                src="/src/assets/old-logo.png"
+                alt="IIMM Old Logo"
+                className="h-20 mb-3 object-contain"
+              />
+              <p className="font-semibold text-blue-700">
+                Indian Association of Materials Management (1975–1983)
               </p>
-            </div>
-            
-            <h3 className="text-xl font-semibold mb-4">Key Milestones</h3>
-            
-            <div className="space-y-6">
-              <div className="flex">
-                <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold">1971</div>
-                <div className="ml-4">
-                  <h4 className="font-semibold text-lg">Establishment</h4>
-                  <p className="text-gray-700">
-                    Foundation of IIMM with the inauguration of the Delhi Branch on 19th September 1971
-                  </p>
-                </div>
-              </div>
-              
-              <div className="flex">
-                <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold">1980s</div>
-                <div className="ml-4">
-                  <h4 className="font-semibold text-lg">Expansion</h4>
-                  <p className="text-gray-700">
-                    Establishment of 56 branches and 16 chapters across India, creating a pan-India presence
-                  </p>
-                </div>
-              </div>
-              
-              <div className="flex">
-                <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold">2000s</div>
-                <div className="ml-4">
-                  <h4 className="font-semibold text-lg">Global Recognition</h4>
-                  <p className="text-gray-700">
-                    Accreditation by the International Federation of Purchasing and Supply Management (IFPSM), 
-                    making IIMM's Graduate Diploma in Materials Management (GDMM) globally recognized
-                  </p>
-                </div>
-              </div>
-              
-              <div className="flex">
-                <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold">2010s</div>
-                <div className="ml-4">
-                  <h4 className="font-semibold text-lg">Academic Excellence</h4>
-                  <p className="text-gray-700">
-                    Introduction of specialized programs including Post Graduate Diploma in Logistics & 
-                    Supply Chain Management (PGDL&SCM) and establishment of a Research Centre in 
-                    association with IISWBM, Kolkata
-                  </p>
-                </div>
-              </div>
-              
-              <div className="flex">
-                <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold">2020s</div>
-                <div className="ml-4">
-                  <h4 className="font-semibold text-lg">Digital Transformation</h4>
-                  <p className="text-gray-700">
-                    Implementation of digital learning platforms, virtual training programs, and 
-                    expansion of online certification courses to reach a global audience
-                  </p>
-                </div>
+              <p className="text-gray-600">Rechristened to</p>
+              <div className="text-2xl mt-2 text-blue-600 animate-bounce">
+                ⬇️
               </div>
             </div>
-            
-            <div className="mt-12 bg-blue-50 p-6 rounded-lg">
-              <h3 className="text-xl font-semibold mb-4 text-primary">Our Impact</h3>
-              <div className="grid md:grid-cols-3 gap-6">
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-primary mb-2">50+</div>
-                  <p className="text-gray-700">Years of Excellence</p>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-primary mb-2">72+</div>
-                  <p className="text-gray-700">Branches & Chapters</p>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-primary mb-2">1L+</div>
-                  <p className="text-gray-700">Professionals Trained</p>
-                </div>
-              </div>
-            </div>
-            
-            <div className="mt-12">
-              <h3 className="text-xl font-semibold mb-4">Our Vision for the Future</h3>
-              <p className="text-gray-700 mb-6">
-                As we move forward, IIMM remains committed to its mission of promoting excellence in 
-                materials management. We continue to evolve our programs, expand our global footprint, 
-                and adapt to the changing needs of the industry and our members.
+          </div>
+
+          {/* Row 4 */}
+          <div className="p-8 bg-gradient-to-r from-blue-50 to-blue-100 text-center">
+            <div className="flex flex-col items-center">
+              <img
+                src="/src/assets/logo.png"
+                alt="IIMM Logo"
+                className="h-20 mb-3 object-contain"
+              />
+              <p className="font-semibold text-blue-800">
+                Indian Institute of Materials Management (23-4-1983)
               </p>
               <p className="text-gray-700">
-                Our focus remains on fostering innovation, embracing technology, and developing 
-                future-ready professionals who can lead the way in sustainable materials management 
-                practices.
+                Current Membership &gt; 9500 Individual Members &gt; 200
+                Institutional Members
               </p>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
-    </div>
+    </section>
   );
-}
+};
+
+export default HistorySection;

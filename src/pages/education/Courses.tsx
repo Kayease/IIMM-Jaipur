@@ -8,37 +8,43 @@ const Courses = () => {
       title: "Post Graduate Diploma in Materials Management (PGDMM)",
       duration: "2 Years",
       eligibility: "Graduation in any discipline",
-      description: "Comprehensive program covering all aspects of materials and supply chain management."
+      description: "Comprehensive program covering all aspects of materials and supply chain management.",
+      bgColor: "bg-blue-400"
     },
     {
       title: "Advanced Diploma in Materials Management (ADMM)",
       duration: "1 Year",
       eligibility: "Graduation in any discipline",
-      description: "Focused program for working professionals looking to enhance their skills."
+      description: "Focused program for working professionals looking to enhance their skills.",
+      bgColor: "bg-green-400"
     },
     {
       title: "Diploma in Materials Management (DMM)",
       duration: "1 Year",
       eligibility: "10+2 or equivalent",
-      description: "Entry-level program for those starting their career in materials management."
+      description: "Entry-level program for those starting their career in materials management.",
+      bgColor: "bg-yellow-400"
     },
     {
       title: "Certificate Course in Supply Chain Management",
       duration: "6 Months",
       eligibility: "10+2 or equivalent",
-      description: "Specialized course focusing on supply chain operations and logistics."
+      description: "Specialized course focusing on supply chain operations and logistics.",
+      bgColor: "bg-purple-400"
     },
     {
       title: "Certificate Course in Purchase Management",
       duration: "6 Months",
       eligibility: "10+2 or equivalent",
-      description: "Focused training in procurement and vendor management."
+      description: "Focused training in procurement and vendor management.",
+      bgColor: "bg-pink-400"
     },
     {
       title: "Certificate Course in Stores Management",
       duration: "3 Months",
       eligibility: "10th pass",
-      description: "Basic course in inventory and warehouse management."
+      description: "Basic course in inventory and warehouse management.",
+      bgColor: "bg-cyan-400"
     }
   ];
 
@@ -85,23 +91,20 @@ const Courses = () => {
 
             <div className="grid md:grid-cols-2 gap-6 mb-16">
               {courses.map((course, index) => (
-                <div key={index} className="border border-gray-200 rounded-lg overflow-hidden hover:shadow-md transition-shadow">
-                  <div className="bg-primary text-white px-6 py-4">
+                <div key={index} className={`border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition-all transform hover:-translate-y-1 ${course.bgColor} text-white`}>
+                  <div className="bg-black/20 px-6 py-4">
                     <h3 className="text-lg font-semibold">{course.title}</h3>
                   </div>
                   <div className="p-6">
-                    <p className="text-gray-700 mb-4">{course.description}</p>
-                    <div className="flex items-center text-sm text-gray-600 mb-2">
-                      <Clock className="h-4 w-4 mr-2 text-primary" />
+                    <p className="mb-4 text-white/90">{course.description}</p>
+                    <div className="flex items-center text-sm text-white/90 mb-2">
+                      <Clock className="h-4 w-4 mr-2 text-white" />
                       <span>Duration: {course.duration}</span>
                     </div>
-                    <div className="flex items-center text-sm text-gray-600">
-                      <GraduationCap className="h-4 w-4 mr-2 text-primary" />
+                    <div className="flex items-center text-sm text-white/90">
+                      <GraduationCap className="h-4 w-4 mr-2 text-white" />
                       <span>Eligibility: {course.eligibility}</span>
                     </div>
-                    <button className="mt-4 w-full bg-primary hover:bg-primary/90 text-white py-2 px-4 rounded-md text-sm font-medium transition-colors">
-                      Learn More
-                    </button>
                   </div>
                 </div>
               ))}
@@ -124,20 +127,7 @@ const Courses = () => {
               </div>
             </div>
 
-            <div className="mt-16 text-center">
-              <h3 className="text-2xl font-semibold text-gray-900 mb-4">Admissions Open for 2024-25</h3>
-              <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
-                Start your journey towards a successful career in materials management. Our admission process is simple and transparent.
-              </p>
-              <div className="flex flex-col sm:flex-row justify-center gap-4">
-                <button className="bg-primary hover:bg-primary/90 text-white font-medium py-2.5 px-6 rounded-md transition-colors">
-                  Apply Now
-                </button>
-                <button className="border border-primary text-primary hover:bg-primary/5 font-medium py-2.5 px-6 rounded-md transition-colors">
-                  Download Brochure
-                </button>
-              </div>
-            </div>
+        
           </div>
         </div>
       </section>

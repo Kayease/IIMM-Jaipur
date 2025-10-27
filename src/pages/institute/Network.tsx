@@ -5,18 +5,26 @@ const chapters = [
   {
     region: "Northern Region",
     branches: [
-      { name: "Delhi", established: 1972, members: 1250, contact: "delhi@iimm.org" },
-      { name: "Chandigarh", established: 1980, members: 450, contact: "chandigarh@iimm.org" },
-      { name: "Jaipur", established: 1978, members: 520, contact: "jaipur@iimm.org" },
-      { name: "Lucknow", established: 1982, members: 380, contact: "lucknow@iimm.org" },
+      { name: "Alwar", established: 1972, members: 1250, contact: "delhi@iimm.org" },
+      { name: "Ayodhyar", established: 1978, members: 520, contact: "jaipur@iimm.org" },
+      { name: "Bhiwadi", established: 1982, members: 380, contact: "lucknow@iimm.org" },
       { name: "Dehradun", established: 1990, members: 280, contact: "dehradun@iimm.org" },
-      { name: "Amritsar", established: 1985, members: 210, contact: "amritsar@iimm.org" }
+      { name: "Delhi", established: 1985, members: 210, contact: "amritsar@iimm.org" },
+      { name: "Greater Noida", established: 1985, members: 210, contact: "amritsar@iimm.org" },
+      { name: "Jaipur", established: 1985, members: 210, contact: "amritsar@iimm.org" },
+      { name: "Kanpur", established: 1985, members: 210, contact: "amritsar@iimm.org" },
+      { name: "Lucknow", established: 1985, members: 210, contact: "amritsar@iimm.org" },
+      { name: "Rae Bareli", established: 1985, members: 210, contact: "amritsar@iimm.org" },
+      { name: "Udaipur", established: 1985, members: 210, contact: "amritsar@iimm.org" },
+      
+
+      
     ]
   },
   {
     region: "Southern Region",
     branches: [
-      { name: "Bangalore", established: 1975, members: 980, contact: "bangalore@iimm.org" },
+      { name: "	Bangalore", established: 1975, members: 980, contact: "bangalore@iimm.org" },
       { name: "Chennai", established: 1973, members: 870, contact: "chennai@iimm.org" },
       { name: "Hyderabad", established: 1976, members: 650, contact: "hyderabad@iimm.org" },
       { name: "Cochin", established: 1983, members: 420, contact: "cochin@iimm.org" },
@@ -27,23 +35,38 @@ const chapters = [
   {
     region: "Eastern Region",
     branches: [
-      { name: "Kolkata", established: 1972, members: 1100, contact: "kolkata@iimm.org" },
-      { name: "Bhubaneswar", established: 1981, members: 490, contact: "bhubaneswar@iimm.org" },
-      { name: "Guwahati", established: 1986, members: 320, contact: "guwahati@iimm.org" },
-      { name: "Patna", established: 1984, members: 410, contact: "patna@iimm.org" },
-      { name: "Ranchi", established: 1988, members: 290, contact: "ranchi@iimm.org" },
-      { name: "Bhilai", established: 1991, members: 260, contact: "bhilai@iimm.org" }
+      { name: "Bokaro", established: 1972, members: 1100, contact: "kolkata@iimm.org" },
+      { name: "Burnpur", established: 1981, members: 490, contact: "bhubaneswar@iimm.org" },
+      { name: "Dhanbad", established: 1986, members: 320, contact: "guwahati@iimm.org" },
+      { name: "Durgapur", established: 1984, members: 410, contact: "patna@iimm.org" },
+      { name: "Jamshedpur", established: 1988, members: 290, contact: "ranchi@iimm.org" },
+      { name: "	Kolkata", established: 1991, members: 260, contact: "bhilai@iimm.org" },
+      { name: "	Nalconagar", established: 1991, members: 260, contact: "bhilai@iimm.org" },
+      { name: "	Ranchi", established: 1991, members: 260, contact: "bhilai@iimm.org" },
+      { name: "	Rourkela	", established: 1991, members: 260, contact: "bhilai@iimm.org" },
     ]
   },
   {
     region: "Western Region",
     branches: [
+      { name: "Ahmedabad", established: 1977, members: 680, contact: "ahmedabad@iimm.org" },
+      
+      { name: "Bharuch", established: 1980, members: 390, contact: "nagpur@iimm.org" },
+      { name: "Chattrapati Sambhajinagar", established: 1982, members: 410, contact: "indore@iimm.org" },
       { name: "Mumbai", established: 1972, members: 1500, contact: "mumbai@iimm.org" },
       { name: "Pune", established: 1974, members: 920, contact: "pune@iimm.org" },
-      { name: "Ahmedabad", established: 1977, members: 680, contact: "ahmedabad@iimm.org" },
-      { name: "Indore", established: 1982, members: 410, contact: "indore@iimm.org" },
-      { name: "Nagpur", established: 1980, members: 390, contact: "nagpur@iimm.org" },
-      { name: "Goa", established: 1993, members: 180, contact: "goa@iimm.org" }
+      
+      { name: "Goa", established: 1993, members: 180, contact: "goa@iimm.org" },
+      { name: "Gandhidham", established: 1993, members: 180, contact: "goa@iimm.org" },
+      { name: "Jamnagar", established: 1993, members: 180, contact: "goa@iimm.org" },
+      { name: "	Mundra", established: 1993, members: 180, contact: "goa@iimm.org" },
+      { name: "Nashik", established: 1993, members: 180, contact: "goa@iimm.org" },
+      { name: "	Rajkot", established: 1993, members: 180, contact: "goa@iimm.org" },
+      { name: "Surat", established: 1993, members: 180, contact: "goa@iimm.org" },
+      { name: "	Vadodara", established: 1993, members: 180, contact: "goa@iimm.org" },
+      { name: "	Vapi", established: 1993, members: 180, contact: "goa@iimm.org" },
+      { name: "	V U Nagar", established: 1993, members: 180, contact: "goa@iimm.org" }
+  
     ]
   }
 ];

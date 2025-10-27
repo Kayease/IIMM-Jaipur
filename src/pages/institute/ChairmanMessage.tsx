@@ -3,7 +3,7 @@ import InstituteHero from "@/components/InstituteHero";
 import heroImage from "@/assets/Herosection/home2.png";
 
 // Import chairman's profile image
-import chairmanImage from "@/assets/images/chairmen.png";
+import chairmanImage from "@/assets/chairman.png";
 
 const ChairmanMessage = () => {
   return (
@@ -13,7 +13,7 @@ const ChairmanMessage = () => {
         subtitle="A Message from the Chairman of IIMM Jaipur"
         image={heroImage}
       />
-      
+
       <section className="py-16 bg-background">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto bg-white rounded-xl shadow-sm overflow-hidden">
@@ -21,10 +21,10 @@ const ChairmanMessage = () => {
             <div className="bg-primary/5 p-6 md:p-8 border-b border-muted">
               <div className="flex flex-col md:flex-row items-center gap-6">
                 <div className="w-48 h-48 rounded-full overflow-hidden border-4 border-white shadow-md bg-white">
-                  <img 
+                  <img
                     src={chairmanImage}
-                    alt="Chairman, IIMM Jaipur" 
-                    className="w-full h-full object-cover"
+                    alt="Chairman, IIMM Jaipur"
+                    className="w-full h-full object-conver"
                     onError={(e) => {
                       // Fallback to a default user icon if the image fails to load
                       const target = e.target as HTMLImageElement;
@@ -35,9 +35,9 @@ const ChairmanMessage = () => {
                 </div>
                 <div className="text-center md:text-left mt-4 md:mt-0">
                   <h2 className="font-heading text-2xl md:text-3xl font-bold text-foreground/90">
-                    Mr. [Chairman's Name]
+                    Mr. Pankaj Gupta
                   </h2>
-                  <p className="text-lg text-foreground/80 mt-1">Chairman, IIMM Delhi</p>
+                  <p className="text-lg text-foreground/80 mt-1">Chairman, IIMM Jaipur</p>
                   <p className="text-sm text-muted-foreground mt-2">
                     [Designation], [Company/Organization]
                   </p>
@@ -45,76 +45,98 @@ const ChairmanMessage = () => {
                     [Designation], [Company/Organization]
                   </p>
                   <div className="flex flex-wrap justify-center md:justify-start gap-4 mt-4">
-                    <a 
-                      href="mailto:chairman@iimmdelhi.org" 
+                    <a
+                      href="mailto:chairman@iimmjaipur.org"
                       className="inline-flex items-center gap-1.5 text-sm text-primary hover:text-primary/80 transition-colors"
                     >
                       <Mail size={16} />
-                      chairman@iimmdelhi.org
+                      chairman@iimmjaipur.org
                     </a>
-                    <a 
-                      href="tel:+911141354969" 
+                    <a
+                      href="tel:+911141354969"
                       className="inline-flex items-center gap-1.5 text-sm text-primary hover:text-primary/80 transition-colors"
                     >
                       <Phone size={16} />
-                      +91 11 41354969
+                      +91 9414075879 
                     </a>
                   </div>
                 </div>
               </div>
             </div>
-            
+
             {/* Chairman's Message */}
             <div className="p-6 md:p-8">
               <div className="prose max-w-none text-foreground/90 space-y-6">
                 <p className="text-lg leading-relaxed">
-                  Dear Members and Visitors,
+                  Dear Members, Materials Management & Supply Chain Professionals,
                 </p>
-                
+
                 <p className="leading-relaxed">
-                  It is with great pleasure and a deep sense of responsibility that I address you as the Chairman of the Indian Institute of Materials Management (IIMM) Delhi. For over five decades, IIMM has been at the forefront of promoting excellence in materials management, and it is an honor to lead this esteemed institution into its next chapter of growth and innovation.
+                  It is a great honor and privilege to serve as the Chairman of the <b>Indian Institute of Materials Management (IIMM) – Jaipur Chapter</b> I am deeply grateful for the trust and confidence you have placed in me.
                 </p>
-                
+
                 <p className="leading-relaxed">
-                  In today's rapidly evolving business landscape, the role of materials management has never been more critical. As organizations navigate complex supply chains, sustainability challenges, and technological disruptions, the need for skilled professionals who can optimize resources and drive operational excellence has become paramount.
+                  With over <b>36 years of global experience</b>  across India, China,
+                  and international supply chain ecosystems, I have witnessed how our profession
+                  has evolved from a traditional support activity into a  <b>strategic powerhouse</b>— ensuring industry excellence,
+                  customer satisfaction, and national competitiveness.
                 </p>
-                
+
                 <div className="bg-muted/30 p-6 rounded-lg border-l-4 border-primary">
                   <blockquote className="italic text-foreground/90">
-                    "Our vision is to be the premier institution for materials management education and professional development, empowering individuals and organizations to achieve operational excellence through innovation, ethical practices, and continuous learning."
+                  A strong supply chain doesn’t follow growth — it enables it,
+                  accelerates it, and secures it for the future.
                   </blockquote>
                 </div>
-                
+
+
+
                 <p className="leading-relaxed">
-                  At IIMM Delhi, we are committed to providing world-class education, training, and professional development opportunities that equip our members with the knowledge and skills needed to excel in this dynamic field. Our comprehensive curriculum, experienced faculty, and industry partnerships ensure that our programs remain relevant and aligned with the latest industry trends and best practices.
+                  In an era defined by uncertainty, transformation, and digital disruption,
+                  our focus must be on:
                 </p>
-                
-                <p className="leading-relaxed">
-                  As we look to the future, we remain steadfast in our commitment to:
-                </p>
-                
+
                 <ul className="list-disc pl-6 space-y-2">
-                  <li>Expanding our academic offerings to address emerging trends in supply chain and materials management</li>
+                  <li>Advancing modern procurement and inventory excellence</li>
                   <li>Strengthening industry-academia collaboration to bridge the gap between theory and practice</li>
-                  <li>Promoting research and innovation in materials management</li>
-                  <li>Enhancing the professional development and networking opportunities for our members</li>
-                  <li>Fostering a culture of ethical practices and sustainability in materials management</li>
+                  <li>Driving innovation through digitalization</li>
+                  <li>Enhancing global sourcing and supplier collaboration</li>
+                  <li>Strengthening academia–industry partnerships</li>
+                  <li>Empowering young talent with future-ready skills</li>
+                  <li>Building resilience and sustainability across value chains</li>
+
                 </ul>
-                
+
+
+                <p>My vision is to position <b>IIMM Jaipur Chapter</b> as a hub of:</p>
+
+                <ul className="list-disc pl-6 space-y-2">
+                  <li>Professional development and continuous learning</li>
+                  <li>Global benchmarking and adoption of best practices</li>
+                  <li>Collaboration across industries and supply networks</li>
+                  <li>Leadership in shaping India’s supply chain future</li>
+                </ul>
+
+                <p className="leading-relaxed" >Together, we will elevate the role and recognition of
+                  <b>Materials Management & Supply Chain</b> as a key pillar
+                  in driving India’s industrial growth and global competitiveness.</p>
+
+                <p className="leading-relaxed" >I look forward to working closely with each one of you as we take our chapter
+                  to greater heights of relevance, innovation, and impact.</p>
+
+
+
+
                 <p className="leading-relaxed">
-                  I invite you to explore our programs, participate in our events, and join our vibrant community of materials management professionals. Together, we can shape the future of this critical business function and create lasting value for organizations and society at large.
+                  Thank you for your continued support and trust in IIMM jaipur.
                 </p>
-                
-                <p className="leading-relaxed">
-                  Thank you for your continued support and trust in IIMM Delhi.
-                </p>
-                
+
                 <div className="mt-8">
                   <p className="font-semibold">Warm regards,</p>
                   <div className="mt-2">
                     <div className="h-12 w-48 border-t-2 border-primary mt-2"></div>
-                    <p className="font-heading text-lg font-semibold mt-2">[Chairman's Name]</p>
-                    <p>Chairman, IIMM Delhi</p>
+                    <p className="font-heading text-lg font-semibold mt-2">Mr. Pankaj Gupta</p>
+                    <p>Chairman – IIMM Jaipur Chapter</p>
                   </div>
                 </div>
               </div>

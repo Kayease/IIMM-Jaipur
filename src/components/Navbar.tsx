@@ -23,16 +23,6 @@ const Navbar = () => {
 
   const menuItems = [
     {
-      title: "Alumni",
-      items: [
-        { name: "Alumni Home", path: "/alumni" },
-        { name: "Success Stories", path: "/alumni/success-stories" },
-        { name: "Events", path: "/alumni/events" },
-        { name: "Mentorship Program", path: "/alumni/mentorship" },
-        { name: "Alumni Network", path: "/alumni/network" },
-      ],
-    },
-    {
       title: "The Institute",
       items: [
         { name: "About IIMM", path: "/institute/about" },
@@ -59,7 +49,6 @@ const Navbar = () => {
         { name: "Faculty", path: "/education/faculty" },
         { name: "Exam Schedule", path: "/education/exam-schedule" },
         { name: "Results", path: "/education/results" },
-        { name: "Mandatory Disclosures", path: "/education/mandatory-disclosures" },
         { 
           name: "Student Zone", 
           path: "/education/student-zone",
@@ -147,8 +136,12 @@ const Navbar = () => {
           {/* Logo and Title Section */}
           <div className="flex flex-col items-center py-3 sm:py-4 border-b border-gray-200">
             <div className="flex flex-col items-center">
-              <div className="h-15 w-14 sm:h-16 sm:w-16 bg-blue-100 rounded-full flex items-center justify-center mb-1 sm:mb-2">
-                <span className="text-xl sm:text-2xl font-bold text-blue-900">IIMM</span>
+              <div className="h-20 w-20 sm:h-24 sm:w-24 flex items-center justify-center mb-1 sm:mb-2">
+                <img 
+                  src="/src/assets/logo.png" 
+                  alt="IIMM Jaipur Logo" 
+                  className="h-full w-full object-contain"
+                />
               </div>
               <div className="text-center">
                 <h1 className="text-lg sm:text-xl md:text-3xl font-bold text-blue-900">

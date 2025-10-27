@@ -129,7 +129,7 @@ const Membership = () => {
                 <div className="w-12 h-12 mx-auto mb-4 rounded-full bg-primary/10 flex items-center justify-center">
                   <Users className="text-primary" size={24} />
                 </div>
-                <h3 className="text-lg font-semibold">Why Join IIMM?</h3>
+             
                 <p className="text-sm text-muted-foreground mt-2">Discover the benefits of becoming a member</p>
               </CardContent>
             </Card>

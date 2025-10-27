@@ -40,7 +40,6 @@ import Forms from "./pages/education/Forms";
 import StudentZone from "./pages/education/StudentZone";
 import ExamSchedule from "./pages/education/ExamSchedule";
 import Results from "./pages/education/Results";
-import MandatoryDisclosures from "./pages/education/MandatoryDisclosures";
 
 import { Youtube } from "lucide-react";
 
@@ -62,11 +61,6 @@ import DelhiBranch from "./pages/payment/DelhiBranch";
 import NHQMembership from "./pages/payment/NHQMembership";
 import NHQEducation from "./pages/payment/NHQEducation";
 import GSTInfo from "./pages/payment/GSTInfo";
-import AlumniHome from "./pages/alumni";
-import SuccessStories from "./pages/alumni/success-stories";
-import AlumniEvents from "./pages/alumni/events";
-import MentorshipProgram from "./pages/alumni/mentorship";
-import AlumniNetwork from "./pages/alumni/network";
 
 const queryClient = new QueryClient();
 
@@ -119,7 +113,6 @@ const App = () => (
             <Route path="/education/results" element={<Results />} />
             <Route path="/education/results/:type" element={<Results />} />
             <Route path="/education/results/:type/:year" element={<Results />} />
-            <Route path="/education/mandatory-disclosures" element={<MandatoryDisclosures />} />
             
             {/* Other Routes */}
             <Route path="/about" element={<About />} />
@@ -150,14 +143,6 @@ const App = () => (
               </Route>
             </Route>
             <Route path="/training" element={<Training />} />
-            {/* Alumni Section Routes */}
-            <Route path="/alumni" element={<AlumniHome />} />
-            <Route path="/alumni/success-stories" element={<SuccessStories />} />
-            <Route path="/alumni/events" element={<AlumniEvents />} />
-            <Route path="/alumni/mentorship" element={<MentorshipProgram />} />
-            <Route path="/alumni/mentorship/apply" element={<div>Mentee Application Form</div>} />
-            <Route path="/alumni/mentorship/become-mentor" element={<div>Mentor Application Form</div>} />
-            <Route path="/alumni/network" element={<AlumniNetwork />} />
             <Route path="/training/:section" element={<Training />} />
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/contact" element={<Contact />} />

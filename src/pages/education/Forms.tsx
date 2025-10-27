@@ -10,7 +10,8 @@ const Forms = () => {
       code: "PGDMM-FORM-2024",
       lastUpdated: "15 Jan 2024",
       size: "1.2 MB",
-      type: "PDF"
+      type: "PDF",
+      bgColor: "bg-blue-500"
     },
     {
       title: "ADMM Application Form",
@@ -18,7 +19,8 @@ const Forms = () => {
       code: "ADMM-FORM-2024",
       lastUpdated: "15 Jan 2024",
       size: "1.1 MB",
-      type: "PDF"
+      type: "PDF",
+      bgColor: "bg-green-500"
     },
     {
       title: "DMM Application Form",
@@ -26,7 +28,8 @@ const Forms = () => {
       code: "DMM-FORM-2024",
       lastUpdated: "15 Jan 2024",
       size: "1.0 MB",
-      type: "PDF"
+      type: "PDF",
+      bgColor: "bg-yellow-500"
     },
     {
       title: "Certificate Course Application",
@@ -34,7 +37,8 @@ const Forms = () => {
       code: "CERT-FORM-2024",
       lastUpdated: "15 Jan 2024",
       size: "980 KB",
-      type: "PDF"
+      type: "PDF",
+      bgColor: "bg-purple-500"
     },
     {
       title: "Scholarship Application Form",
@@ -42,7 +46,8 @@ const Forms = () => {
       code: "SCHOLARSHIP-FORM-2024",
       lastUpdated: "20 Jan 2024",
       size: "850 KB",
-      type: "PDF"
+      type: "PDF",
+      bgColor: "bg-pink-500"
     },
     {
       title: "Hostel Application Form",
@@ -50,7 +55,8 @@ const Forms = () => {
       code: "HOSTEL-FORM-2024",
       lastUpdated: "10 Jan 2024",
       size: "920 KB",
-      type: "PDF"
+      type: "PDF",
+      bgColor: "bg-cyan-500"
     },
     {
       title: "ID Card Application",
@@ -58,7 +64,8 @@ const Forms = () => {
       code: "IDCARD-FORM",
       lastUpdated: "5 Jan 2024",
       size: "780 KB",
-      type: "PDF"
+      type: "PDF",
+      bgColor: "bg-blue-500"
     },
     {
       title: "Bonafide Certificate",
@@ -66,7 +73,8 @@ const Forms = () => {
       code: "BONAFIDE-FORM",
       lastUpdated: "8 Jan 2024",
       size: "810 KB",
-      type: "PDF"
+      type: "PDF",
+      bgColor: "bg-pink-500"
     }
   ];
 
@@ -94,36 +102,38 @@ const Forms = () => {
               <h2 className="text-3xl font-bold text-gray-900 mb-4">Download Application Forms</h2>
               <div className="w-20 h-1 bg-primary mx-auto mb-6"></div>
               <p className="text-gray-600 max-w-3xl mx-auto">
-                Find and download the required application forms for various programs and services at IIMM Delhi.
               </p>
             </div>
 
             <div className="grid md:grid-cols-2 gap-6 mb-12">
               {forms.map((form, index) => (
-                <div key={index} className="border border-gray-200 rounded-lg overflow-hidden hover:shadow-md transition-shadow">
-                  <div className="bg-gray-50 px-6 py-4 border-b border-gray-200">
-                    <h3 className="text-lg font-medium text-gray-900">{form.title}</h3>
-                    <p className="text-sm text-gray-600 mt-1">{form.description}</p>
+                <div key={index} className={`border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition-all transform hover:-translate-y-1 ${form.bgColor} text-white`}>
+                  <div className="bg-black/20 px-6 py-4">
+                    <h3 className="text-lg font-semibold">{form.title}</h3>
+                    <p className="text-sm opacity-90">{form.description}</p>
                   </div>
                   <div className="p-6">
-                    <div className="flex flex-wrap gap-4 text-sm text-gray-600 mb-4">
-                      <span className="flex items-center">
-                        <FileText className="h-4 w-4 mr-1 text-primary" />
-                        {form.type}
-                      </span>
-                      <span>•</span>
-                      <span>Code: {form.code}</span>
-                      <span>•</span>
-                      <span>{form.size}</span>
-                      <span>•</span>
-                      <span>Updated: {form.lastUpdated}</span>
+                    <div className="space-y-3 mb-4">
+                      <div className="flex items-center text-sm">
+                        <FileText className="h-4 w-4 mr-2 text-white/90" />
+                        <span>Code: {form.code}</span>
+                      </div>
+                      <div className="flex items-center text-sm">
+                        <span>Type: {form.type}</span>
+                        <span className="mx-2">•</span>
+                        <span>Size: {form.size}</span>
+                      </div>
+                      <div className="flex items-center text-sm">
+                        <span>Last updated: {form.lastUpdated}</span>
+                      </div>
                     </div>
-                    <div className="flex flex-wrap gap-3">
-                      <button className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-primary hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary">
-                        <Download className="h-4 w-4 mr-2" />
+                    <div className="flex flex-col sm:flex-row gap-3 mt-6">
+                      <button className="flex-1 flex items-center justify-center gap-2 bg-white/90 hover:bg-white text-gray-800 py-2 px-4 rounded-md text-sm font-medium transition-colors">
+                        <Download className="h-4 w-4" />
                         Download Form
                       </button>
-                      <button className="inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary">
+                      <button className="flex-1 flex items-center justify-center gap-2 border border-white/30 hover:bg-white/10 py-2 px-4 rounded-md text-sm font-medium transition-colors">
+                        <FileText className="h-4 w-4" />
                         View Instructions
                       </button>
                     </div>
@@ -170,24 +180,31 @@ const Forms = () => {
               </div>
             </div>
 
-            <div className="bg-white border border-gray-200 rounded-lg p-6">
+            <div className="bg-indigo-600 text-white rounded-lg p-6 shadow-lg">
               <div className="text-center">
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">Need Help?</h3>
-                <p className="text-gray-600 mb-6">
+                <h3 className="text-2xl font-bold text-white mb-3">Need Help?</h3>
+                <p className="text-indigo-100 mb-6 text-lg">
                   If you're having trouble finding or filling out any forms, our admission team is here to help.
                 </p>
                 <div className="flex flex-col sm:flex-row justify-center gap-4">
                   <a
                     href="mailto:admission@iimmdelhi.org"
-                    className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-primary hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary"
+                    className="inline-flex items-center justify-center px-6 py-3 border-2 border-white text-base font-medium rounded-md text-indigo-700 bg-white hover:bg-indigo-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white transition-all duration-200"
                   >
+                    <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
+                      <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
+                    </svg>
                     Email Admission Office
                   </a>
                   <a
                     href="tel:+911141354969"
-                    className="inline-flex items-center justify-center px-6 py-3 border border-gray-300 text-base font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary"
+                    className="inline-flex items-center justify-center px-6 py-3 border-2 border-white text-base font-medium rounded-md text-white bg-transparent hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white transition-all duration-200"
                   >
-                    Call Us: +91-11-41354969
+                    <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path>
+                    </svg>
+                    +91-11-41354969
                   </a>
                 </div>
               </div>
