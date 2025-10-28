@@ -1,4 +1,4 @@
-import { Users, Building2, CheckCircle, ArrowRight, MapPin, ChevronLeft } from "lucide-react";
+import { Users, Building2, CheckCircle, ArrowRight, MapPin } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link, Outlet, useLocation, useNavigate } from "react-router-dom";
@@ -11,8 +11,8 @@ const Membership = () => {
   // Get the current subpage title
   const getSubpageTitle = () => {
     const path = location.pathname;
-    if (path.includes('why-join')) return 'Why Join IIMM';
-    if (path.includes('types')) return 'Membership Types';
+    if (path.includes('why-join')) ;
+    if (path.includes('types')) ;
     if (path.includes('apply')) return 'Application Forms';
     if (path.includes('branches')) ;
     
@@ -23,22 +23,14 @@ const Membership = () => {
     return (
       <div className="w-full">
         {/* Subpage header */}
-        <div className="bg-muted/40 py-8">
+        <div className="bg-muted/40 pt-4 pb-6">
           <div className="container mx-auto px-4">
-            <Button 
-              variant="ghost" 
-              className="mb-4"
-              onClick={() => navigate('/membership')}
-            >
-              <ChevronLeft className="mr-2 h-4 w-4" />
-              Back to Membership
-            </Button>
             <h1 className="font-heading text-3xl font-bold">{getSubpageTitle()}</h1>
           </div>
         </div>
         
         {/* Subpage content */}
-        <div className="container mx-auto px-4 py-8">
+        <div className="container mx-auto px-4 py-6">
           <Outlet />
         </div>
       </div>

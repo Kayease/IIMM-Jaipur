@@ -123,7 +123,7 @@ const Footer = () => {
               </li>
               <li className="flex items-center space-x-2">
                 <Mail size={18} className="flex-shrink-0" />
-                <span>info@iimmdelhi.org</span>
+                <span>info@iimmjaipur.org</span>
               </li>
             </ul>
           </div>

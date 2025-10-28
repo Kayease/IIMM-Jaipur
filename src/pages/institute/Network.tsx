@@ -5,7 +5,7 @@ const chapters = [
   {
     region: "Northern Region",
     branches: [
-      { name: "Alwar", established: 1972, members: 1250, contact: "delhi@iimm.org" },
+      { name: "Alwar", established: 1972, members: 1250, contact: "alwar@iimm.org" },
       { name: "Ayodhyar", established: 1978, members: 520, contact: "jaipur@iimm.org" },
       { name: "Bhiwadi", established: 1982, members: 380, contact: "lucknow@iimm.org" },
       { name: "Dehradun", established: 1990, members: 280, contact: "dehradun@iimm.org" },

@@ -53,13 +53,6 @@ const Navbar = () => {
           name: "Student Zone", 
           path: "/education/student-zone",
           subItems: [
-            { 
-              name: "Student Login", 
-              path: "/education/student-zone/portal",
-              className: "bg-blue-50 text-blue-700 font-medium hover:bg-blue-100"
-            },
-            { name: "Academic Calendar", path: "/education/student-zone/academic-calendar" },
-            { name: "Course Materials", path: "/education/student-zone/course-materials" },
             { name: "Exam Schedule", path: "/education/student-zone/exam-schedule" },
             { name: "Assignments", path: "/education/student-zone/assignments" },
             { name: "Books & Resources", path: "/education/student-zone/books" },
@@ -117,13 +110,13 @@ const Navbar = () => {
                 <Phone size={16} />
                 <span>011-41354969</span>
               </a>
-              <a href="mailto:admin@iimmdelhi.org" className="flex items-center gap-1.5 hover:text-blue-200 transition-colors text-sm sm:text-base">
+              <a href="mailto:admin@iimmjaipur.org" className="flex items-center gap-1.5 hover:text-blue-200 transition-colors text-sm sm:text-base">
                 <Mail size={16} />
-                <span>admin@iimmdelhi.org</span>
+                <span>admin@iimmjaipur.org</span>
               </a>
-              <a href="mailto:edu@iimmdelhi.org" className="flex items-center gap-1.5 hover:text-blue-200 transition-colors text-sm sm:text-base">
+              <a href="mailto:edu@iimmjaipur.org" className="flex items-center gap-1.5 hover:text-blue-200 transition-colors text-sm sm:text-base">
                 <Mail size={16} />
-                <span>edu@iimmdelhi.org</span>
+                <span>edu@iimmjaipur.org</span>
               </a>
             </div>
           </div>
@@ -311,31 +304,7 @@ const Navbar = () => {
                         isActive("/events") ? "bg-blue-50/50 font-medium" : ""
                       }`}
                     >
-                      All Events
-                    </a>
-                    <a
-                      href="/events/upcoming"
-                      className={`block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 transition-colors ${
-                        isActive("/events/upcoming") ? "bg-blue-50/50 font-medium" : ""
-                      }`}
-                    >
-                      Upcoming Events
-                    </a>
-                    <a
-                      href="/events/recent"
-                      className={`block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 transition-colors ${
-                        isActive("/events/recent") ? "bg-blue-50/50 font-medium" : ""
-                      }`}
-                    >
-                      Recent Events
-                    </a>
-                    <a
-                      href="/events/past"
-                      className={`block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 transition-colors ${
-                        isActive("/events/past") ? "bg-blue-50/50 font-medium" : ""
-                      }`}
-                    >
-                      Past Events
+                      Events
                     </a>
                   </div>
                 )}

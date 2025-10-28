@@ -59,7 +59,7 @@ const Fees = () => {
     },
     {
       method: "Demand Draft",
-      description: "Pay via demand draft in favor of 'IIMM Delhi' payable at New Delhi",
+      description: "Pay via demand draft in favor of 'IIMM jaipur' payable at New Delhi",
       instructions: [
         "Prepare a demand draft for the applicable fee amount",
         "Mention your name and program on the back of the DD",
@@ -71,7 +71,7 @@ const Fees = () => {
       description: "Direct bank transfer to our account",
       details: {
         bankName: "Bank of Baroda",
-        accountName: "IIMM Delhi",
+        accountName: "IIMM jaipur",
         accountNumber: "12345678901",
         ifsc: "BARB0IMMDEL",
         branch: "Karol Bagh, New Delhi"

@@ -188,4 +188,4 @@ export const branches: Branch[] = [
       linkedin: 'company/iimm-hyderabad'
     }
   }
-];
+]; 

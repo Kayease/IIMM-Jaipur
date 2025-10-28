@@ -588,7 +588,7 @@ const Home = () => {
         <div className="container mx-auto px-4 text-center">
           <h2 className="font-heading text-3xl md:text-4xl font-bold mb-4">Ready to Advance Your Career?</h2>
           <p className="text-lg mb-8 max-w-2xl mx-auto opacity-90">
-            Join IIMM Delhi and become part of India's premier materials management professional community.
+            Join IIMM Jaipur and become part of India's premier materials management professional community.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link to="/education/forms">

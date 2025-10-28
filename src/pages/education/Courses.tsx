@@ -86,7 +86,7 @@ const Courses = () => {
             <div className="w-20 h-1 bg-primary mb-8"></div>
             
             <p className="text-gray-700 mb-12">
-              IIMM Delhi offers a range of academic programs designed to provide comprehensive knowledge and practical skills in materials and supply chain management. Our courses are designed to meet the needs of both fresh graduates and working professionals.
+              IIMM jaipur offers a range of academic programs designed to provide comprehensive knowledge and practical skills in materials and supply chain management. Our courses are designed to meet the needs of both fresh graduates and working professionals.
             </p>
 
             <div className="grid md:grid-cols-2 gap-6 mb-16">

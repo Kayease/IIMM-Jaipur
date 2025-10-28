@@ -6,28 +6,10 @@ import { BookOpen, Users, Calendar, FileText, Award, GraduationCap, Briefcase, C
 const StudentZone = () => {
   const quickLinks = [
     {
-      title: "Academic Calendar",
-      icon: <Calendar className="h-8 w-8 text-primary" />,
-      description: "View important dates, holidays, and academic schedules",
-      link: "/education/student-zone/academic-calendar"
-    },
-    {
-      title: "Course Materials",
-      icon: <BookOpen className="h-8 w-8 text-primary" />,
-      description: "Access lecture notes, presentations, and study resources",
-      link: "/education/student-zone/course-materials"
-    },
-    {
       title: "Exam Schedule",
       icon: <FileText className="h-8 w-8 text-primary" />,
       description: "Check examination dates, timings, and guidelines",
       link: "/education/student-zone/exam-schedule"
-    },
-    {
-      title: "Student Portal",
-      icon: <Users className="h-8 w-8 text-primary" />,
-      description: "Access your academic records and personal dashboard",
-      link: "/education/student-zone/portal"
     },
     {
       title: "Placement Cell",
