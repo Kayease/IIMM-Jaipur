@@ -1,36 +1,41 @@
 import { useEffect, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import event1 from "@/assets/event-1.jpg";
+import event2 from "@/assets/event-2.jpg";
+import event3 from "@/assets/event-3.jpg";
+import carousel1 from "@/assets/carousel-1.jpg";
+import carousel2 from "@/assets/carousel-2.jpg";
+import instituteBuilding from "@/assets/institute-building.jpg";
 
 const programs = [
   {
     id: 1,
-    image: "/src/assets/event-1.jpg",
+    image: event1,
     title: "Undergraduate Programs",
   },
   {
     id: 2,
-    image: "/src/assets/event-2.jpg",
+    image: event2,
     title: "Postgraduate Programs",
   },
   {
     id: 3,
-    image: "/src/assets/event-3.jpg",
+    image:  event3,
     title: "Executive Learning",
   },
   {
     id: 4,
-    image: "/src/assets/carousel-1.jpg",
+    image: carousel1,
     title: "Distance Learning",
   },
   {
     id: 5,
-    image: "/src/assets/carousel-2.jpg",
+    image: carousel2,
     title: "Professional Certifications",
   },
 ];
 
 export default function HomeCarousel() {
-  // Duplicate slides for infinite looping illusion
   const duplicatedPrograms = [...programs, ...programs];
 
   const [translateX, setTranslateX] = useState(0);
@@ -73,7 +78,7 @@ export default function HomeCarousel() {
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat scale-105"
           style={{
-            backgroundImage: 'url(/src/assets/institute-building.jpg)',
+            backgroundImage: 'url(  instituteBuilding)',
             backgroundAttachment: 'fixed',
             filter: 'blur(4px)'
           }}

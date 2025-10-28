@@ -1,5 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
+import oldLogo from "@/assets/old-logo.png";
+import iimmLogo from "@/assets/logo.png";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
@@ -122,7 +124,7 @@ const HistorySection = () => {
           <div className="p-8 border-b border-gray-300 text-center">
             <div className="flex flex-col items-center">
               <img
-                src="/src/assets/old-logo.png"
+                src={oldLogo}
                 alt="IIMM Old Logo"
                 className="h-20 mb-3 object-contain"
               />
@@ -140,7 +142,7 @@ const HistorySection = () => {
           <div className="p-8 bg-gradient-to-r from-blue-50 to-blue-100 text-center">
             <div className="flex flex-col items-center">
               <img
-                src="/src/assets/logo.png"
+                src={iimmLogo}
                 alt="IIMM Logo"
                 className="h-20 mb-3 object-contain"
               />

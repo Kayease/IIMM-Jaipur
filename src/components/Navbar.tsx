@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import { Menu, X, ChevronDown, Phone, Mail } from "lucide-react";
+import logo from "@/assets/logo.png";
 
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -131,7 +132,7 @@ const Navbar = () => {
             <div className="flex flex-col items-center">
               <div className="h-20 w-20 sm:h-24 sm:w-24 flex items-center justify-center mb-1 sm:mb-2">
                 <img 
-                  src="/src/assets/logo.png" 
+                  src={logo} 
                   alt="IIMM Jaipur Logo" 
                   className="h-full w-full object-contain"
                 />
